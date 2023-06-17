@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #7e7dc0;
+  }
+  
+  #highscores-container {
+    display: none;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  #highscores-container h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  #highscores-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #highscores-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #highscores-list li span {
+    flex: 1;
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  #highscores-list li span:first-child {
+    margin-right: 0;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    margin-right: 110px;
+    text-align: center;
+    color: #080707;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b296c5;
+    color: #000000;
+  }
+  
+  #question-container {
+    margin-top: 20px;
+  }
+  
+  #timer-container {
+    margin-top: 20px;
+  }
+  
+  #result-container {
+    margin-top: 20px;
+  }
+  
+  #score-container {
+    margin-top: 20px;
+  }
+  
+  #initials-form {
+    margin-top: 20px;
+  }
