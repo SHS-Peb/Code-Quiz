@@ -12,4 +12,4 @@ The outline of the project is that I am presented with that quiz that allows me 
 
 ## Link to Deployed Application
 
-https://shs-peb.github.io/Secure-Password-Generator/
+https://shs-peb.github.io/Code-Quiz/
