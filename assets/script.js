@@ -15,7 +15,7 @@ let timeLeft = 60;
 let score = 0;
 let timerInterval;
 
-// Define your questions here
+// Define your questions here add more questions as needed
 const questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -33,11 +33,59 @@ const questions = [
       { text: "if i=5 then", correct: false }
     ]
   },
-  // Add more questions as needed
+  {
+    question: "What do we use to check if two numbers are equal?",
+    answers: [
+      { text: "=", correct: false },
+      { text: "!==", correct: false },
+      { text: "===", correct: true }
+    ]
+  },
+  {
+    question: "What is an else statement?",
+    answers: [
+      { text: "A conditional that runs when the if statement's condition is true", correct: false },
+      { text: "A conditional that runs when the if statement's condition is false", correct: true },
+      { text: "A conditional that runs regardless if true or false", correct: false }
+    ]
+  },
+  {
+    question: "What are values like booleans, strings, and numbers called?",
+    answers: [
+      { text: "types", correct: true },
+      { text: "variables", correct: false },
+      { text: "let", correct: false }
+    ]
+  },
+  {
+    question: "Which value is a type of boolean?",
+    answers: [
+      { text: "true", correct: true },
+      { text: "43", correct: false },
+      { text: "45.8", correct: false }
+    ]
+  },
+  {
+    question: "Which logical operator gives us true if all conditions are true?",
+    answers: [
+      { text: "||", correct: false },
+      { text: "&&", correct: true },
+      { text: "!===", correct: false }
+    ]
+  },
+  {
+    question: "Which are arithmetic operators?",
+    answers: [
+      { text: "+, =, /", correct: false },
+      { text: "/, *, +", correct: true },
+      { text: "*, =, +", correct: false }
+    ]
+  },
 ];
 
 function startQuiz() {
     startButton.disabled = true;
+    startButton.style.display = "none";
     startTimer();
   
     showQuestion();
@@ -59,6 +107,7 @@ function showQuestion() {
 
   questionContainer.innerHTML = "";
   questionContainer.textContent = question.question;
+  questionContainer.style.fontSize = "24px";
 
   for (let i = 0; i < question.answers.length; i++) {
     const answer = question.answers[i];
@@ -122,7 +171,7 @@ function endQuiz() {
     highscoresList.innerHTML = "";
   
     // Add high scores to the list, limited to top 4 scores
-    for (let i = 0; i < Math.min(highScores.length, 4); i++) {
+    for (let i = 0; i < Math.min(highScores.length, 5); i++) {
       const listItem = document.createElement("li");
       const initialsSpan = document.createElement("span");
       const scoreSpan = document.createElement("span");
@@ -146,9 +195,14 @@ startButton.addEventListener("click", startQuiz);
 
 // Show high scores when high score button is clicked
 document.getElementById("highscore-btn").addEventListener("click", function() {
-  updateHighScores();
-  highscoresContainer.style.display = "block";
+  if (highscoresContainer.style.display === "block") {
+    highscoresContainer.style.display = "none";
+  } else {
+    updateHighScores();
+    highscoresContainer.style.display = "block";
+  }
 });
+
 
 document.getElementById("save").addEventListener("click", function() {
   // Save initials and score in local storage
@@ -158,7 +212,7 @@ document.getElementById("save").addEventListener("click", function() {
   highScores.push({ initials: initials, score: score });
   localStorage.setItem("highScores", JSON.stringify(highScores));
   var li = document.createElement ("li")
-  li.textContent = initials + ' - ' + score;
+  li.textContent = initials + " - " + score;
   highscoresList.append (li)
   window.location.reload();
 });
